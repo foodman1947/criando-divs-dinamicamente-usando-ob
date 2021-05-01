@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>site</title>
+        <meta charset="utf-8"/>
+
+    </head>
+    <body>
+        <div class="conteudo">
+            <button onclick="criar()">criar</button>
+            <button onclick="dlet()">deletar</button>
+        </div>
+        <script>
+            function box(largura, altura, cor, classe,display){
+                let newbox = document.createElement('div');
+                let dom = document.querySelector('div.conteudo');
+                this.largura = newbox.style.width = largura;
+                this.altura = altura;
+                this.cor = cor;
+                newbox.style.height = this.altura;
+                newbox.style.backgroundColor = this.cor;
+                this.classe = newbox.className = classe;
+                this.display = newbox.style.display = display;
+                dom.appendChild(newbox);
+            }
+
+            let box1 = new box('300px','300px','yellow','boxx1','inline-block');
+            let box2 = new box('200px','400px','red','boxx2','inline-block');
+            let escutar = document.querySelector('div.boxx1');
+            escutar.addEventListener('mouseover', function(){
+                
+            })
+            function criar(){
+                for(let i = 0; i < 5; i++){
+                    new box('200px','200px','green','box'+i, 'inline-block');
+
+                }
+            }
+            function dlet(){
+                for(let i = 0; i < 5; i++){
+                    document.querySelector('div.box'+i).remove();
+
+                }
+
+            }
+            
+        </script>
+    </body>
+</html>
